@@ -35,7 +35,10 @@ class Person {
 }
 
 abstract class House {
-    constructor(protected key: Key, protected door: boolean = false, protected tenants: Person[] = []) {}
+    protected door: boolean = false;
+    protected tenants: Person[] = [];
+    
+    constructor(protected key: Key) {}
 
     public comeIn(person: Person): void {
         if (this.door) {
